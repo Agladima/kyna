@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { NAV_LINKS, BRAND } from "@/data/constants";
-import { Mail, MapPin, Phone, Linkedin, Twitter, Instagram } from "lucide-react";
+import { Mail, MapPin, Phone, Facebook, Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -60,9 +60,8 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-3">
               {[
-                { icon: Linkedin, href: "#", label: "LinkedIn" },
-                { icon: Twitter, href: "#", label: "Twitter" },
-                { icon: Instagram, href: "#", label: "Instagram" },
+                { icon: Facebook, href: "https://www.facebook.com/profile.php?id=100086274926071", label: "Facebook" },
+                { icon: Instagram, href: "https://www.instagram.com/virtually.kyna", label: "Instagram" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}

@@ -1,8 +1,8 @@
 export const BRAND = {
   name: "Virtually Kyna",
   tagline: "Premium Virtual Management Consulting",
-  email: "hello@virtuallykyna.com",
-  phone: "+234 (0) 000 000 0000",
+  email: "virtually.kyna@gmail.com",
+  phone: "+234 812 351 1828",
   location: "Lagos, Nigeria",
   responseTime: "Within 24 hours",
 };

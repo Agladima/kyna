@@ -1,11 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Quote } from "lucide-react";
 import { staggerContainer, fadeUp, fadeIn, fadeLeft, fadeRight, viewportConfig } from "@/lib/animations";
 import { PILLARS, COMPANY_VALUES } from "@/data/constants";
 import PillarCard from "@/components/ui/PillarCard";
 import DecorativeBg from "@/components/ui/DecorativeBg";
+import aboutImage from "@/images/about.jpeg";
 
 export default function AboutPage() {
   return (
@@ -184,23 +186,13 @@ export default function AboutPage() {
                   clipPath: "polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px))",
                 }}
               >
-                {/* Decorative placeholder */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div
-                      className="w-28 h-28 mx-auto mb-6 rounded-full flex items-center justify-center"
-                      style={{
-                        background: "linear-gradient(135deg, rgba(201,169,110,0.2), rgba(201,169,110,0.05))",
-                        border: "1px solid rgba(201,169,110,0.3)",
-                      }}
-                    >
-                      <span className="font-serif text-4xl font-light text-gold">SM</span>
-                    </div>
-                    <p className="font-sans text-xs text-cream/30 tracking-widest uppercase">
-                      Profile Photo
-                    </p>
-                  </div>
-                </div>
+                <Image
+                  src={aboutImage}
+                  alt="Shekinah Michael, founder of Virtually Kyna"
+                  fill
+                  priority
+                  className="object-cover object-center"
+                />
                 {/* Bottom gradient */}
                 <div
                   className="absolute bottom-0 left-0 right-0 h-1/3"

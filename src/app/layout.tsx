@@ -22,6 +22,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Virtually Kyna" }],
   creator: "Virtually Kyna",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   openGraph: {
     type: "website",
     locale: "en_NG",
