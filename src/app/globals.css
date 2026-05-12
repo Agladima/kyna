@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --cream: #f0e7d5;
+  --navy: #212842;
+  --gold: #c9a96e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter);
+  background-color: var(--navy);
+  color: var(--cream);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0c101a;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9a96e;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e8d5b0;
+}
+
+/* Selection */
+::selection {
+  background: #c9a96e33;
+  color: #f0e7d5;
+}
+
+@layer components {
+  .heading-display {
+    @apply font-serif font-light tracking-wide leading-tight;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #c9a96e, #e8d5b0, #c9a96e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-cream {
+    background: linear-gradient(135deg, #f0e7d5, #ffffff, #f0e7d5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-navy {
+    background: rgba(33, 40, 66, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(201, 169, 110, 0.15);
+  }
+
+  .glass-cream {
+    background: rgba(240, 231, 213, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(240, 231, 213, 0.15);
+  }
+
+  .btn-primary {
+    @apply relative inline-flex items-center gap-2 px-8 py-4 font-sans text-sm font-medium tracking-widest uppercase overflow-hidden transition-all duration-300;
+    background: linear-gradient(135deg, #c9a96e, #a07840);
+    color: #212842;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #e8d5b0, #c9a96e);
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(201, 169, 110, 0.3);
+  }
+
+  .btn-outline {
+    @apply relative inline-flex items-center gap-2 px-8 py-4 font-sans text-sm font-medium tracking-widest uppercase transition-all duration-300;
+    border: 1px solid rgba(201, 169, 110, 0.5);
+    color: #c9a96e;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  .btn-outline:hover {
+    border-color: #c9a96e;
+    background: rgba(201, 169, 110, 0.1);
+    color: #e8d5b0;
+    transform: translateY(-2px);
+  }
+
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.4), transparent);
+  }
+
+  .card-luxury {
+    @apply relative overflow-hidden transition-all duration-500;
+    background: linear-gradient(135deg, rgba(33, 40, 66, 0.8), rgba(26, 32, 53, 0.9));
+    border: 1px solid rgba(201, 169, 110, 0.1);
+  }
+  .card-luxury:hover {
+    border-color: rgba(201, 169, 110, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4), 0 0 60px rgba(201, 169, 110, 0.05);
+  }
+}
