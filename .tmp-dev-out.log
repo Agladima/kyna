@@ -1,0 +1,9 @@
+
+> virtually-kyna@0.1.0 dev
+> next dev --port 3010
+
+  ▲ Next.js 15.0.0
+  - Local:        http://localhost:3010
+  - Environments: .env.local
+
+ ✓ Starting...
