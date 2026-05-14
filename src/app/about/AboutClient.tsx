@@ -244,7 +244,7 @@ export default function AboutPage() {
                   { label: "Background", value: "Corporate Strategy & Law" },
                   { label: "Specialisation", value: "HR & Legal Compliance" },
                   { label: "Focus Market", value: "Nigeria & West Africa" },
-                  { label: "Qualification", value: "Legal Practitioner, Nigeria" },
+                  // { label: "Qualification", value: "Legal Practitioner, Nigeria" },
                 ].map((item) => (
                   <div
                     key={item.label}
